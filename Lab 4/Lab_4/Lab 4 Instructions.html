@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- saved from url=(0186)https://blackboard.algonquincollege.com/bbcswebdav/pid-632743-dt-content-rid-784441_1/courses/15F_CST8285_300/15W_CST8285_300_ImportedContent_20141229012810/lab4_instructions%281%29.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Lab 4 Instructions</title>
+		
+	<style type="text/css">
+:root #content > #right > .dose > .dosesingle,
+:root #content > #center > .dose > .dosesingle
+{ display: none !important; }</style></head>
+	<body>
+		<h1 style="text-align:center;">Lab 4 - Instructions</h1>
+		<h2 style="text-align:center;">CST8285</h2>
+		<p>In this lab, you will be modifying some website files to add some CSS styling, as well as add a web form. Once the website files have been modified, you will upload them to your personal webspace on the Algonquin College network. <strong>Please read the entire lab before beginning.</strong></p>
+		<h3>Step 1 - Set up your Algonquin College Webspace</h3>
+		<p>Please visit <a href="http://www.algonquinstudents.ca/">www.algonquinstudents.ca</a> and follow the instructions there to set up your web hosting account. You should be given a webspace that is accessed at www.algonquinstudents.ca/~laca1234, where laca1234 is your network id. You should also be given an FTP username and password in order to access your webspace with the FileZilla FTP client. You will use this to upload your website files to your webspace.</p>
+		<p>I encourage you to complete this step first, as it will allow for the timely resolution of any potential problems in setting up your web space. If you come across any issues gaining access to your web hosting account, inform ITS, and let me know ASAP.</p>
+		<h3>Step 2 - Download and Unzip the website files</h3>
+		<p>There is a file called lab4.zip on Blackboard under Week 4 - Course Documents - Lab 4. Download this file and extract it to a folder called <code>Lab_4</code> somewhere on your hard drive. This will be your project folder.</p>
+		<h3>Step 3 - Review the file <code>Lab4.html</code></h3>
+		<p>The file <code>Lab4.html</code> contains some tags that we have not covered in class. Please familiarize yourself with these tags. Specifically, find some information on:
+		</p><ul>
+			<li><code>&lt;fieldset&gt;</code></li>
+			<li><code>&lt;legend&gt;</code></li>
+		</ul>
+		<h3>Step 4 - Link your stylesheet to the Lab4.html file</h3>
+		<p>There is a stylesheet called <code>style.css</code> in the <code>css</code> folder, in the project folder. Using a <code>&lt;link&gt;</code> element, link the stylesheet to the HTML page.</p>
+		<h3>Step 5 - Change the <code>&lt;title&gt;</code> of the web page</h3>
+		<p>The format of the title should be Lab 4 by Firstname Lastname</p>
+		<h3>Step 6 - Create the <code>&lt;form&gt;</code> element</h3>
+		<p>Wrap all of the fieldset elements in a <code>&lt;form&gt;</code> element. The <code>method</code> of the form should be <code>post</code>, and the action should be <code>javascript:void(0);</code></p><p>
+		</p><h3>Step 7 - Create the form elements</h3>
+		<p>In each fieldset, there is a list of comments. Each comment will contain the name of a form field, and the type of form element for that field.</p>
+		<p>Here is an example:	<code>&lt;!-- First Name | textbox, size of 40.--&gt;</code></p>
+		<p>Create a two column table in <strong>each</strong> fieldset. For each comment in the fieldset, create a row in the table that has the name of the form field in the first column, and the form element in the second column. </p>
+		<p>Each form element should have a name and an id at minimum. There may be other attributes required, which will be described in the comment <em>after</em> the form element type. </p>
+		<p>For example, the above comment would look like this:<br>
+		<code>&lt;tr&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;First Name:&lt;/td&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;input type="text" name="firstName" id="firstName" size="40"&gt;&lt;/td&gt;<br>
+		&lt;/tr&gt;<br></code></p>
+		<p>If, in the comment, a form field name has an asterisk (*) before the name, include it in the cell. Surround it with a <code>&lt;span&gt;</code> tag, with a class of <code>required.</code>
+		</p><h4>Notes on the <em>Personal Information</em> section</h4>
+		<p>You will be required to create a dropdown box containing all the provinces. There should be an option for each province, and the value attribute of each option should be the province abbreviation. A list of provinces and their abbreviations is included in the comments.</p>
+		<h4>Notes on the <em>Payment Information</em> section</h4>
+		<p>The first form element is a group of radio buttons used to select a credit card type. There are three images in the <code>images</code> folder in the project folder. They are:
+		</p><ul>
+			<li>visa.png</li>
+			<li>mastercard.png</li>
+			<li>amex.png</li>
+		</ul>
+		<p>Using the <code>&lt;img&gt;</code> element, display each icon beside its corresponding radio button. Your result should look like this: <img src="./Lab 4 Instructions_files/creditCardLayout.PNG" alt="Credit Card Layout" title="Credit card icon layout">
+		</p><h4>Notes on the <em>Agree and Submit</em> section</h4>
+		<p>The last row in the table does not contain a field name. Instead, place a submit button in one column, and a reset button in the other.</p>
+		<h3>Step 8 - Add some style with CSS</h3>
+		<p>There is a comment in the CSS stylesheet that contains instructions for defining styles to apply to your web page. Please create the rules as described in the CSS file.</p>
+		<h3>Step 9 - Upload your project folder to your web space</h3>
+		<p>Using the FileZilla client, connect to your webspace and upload the <code>Lab_4</code> folder to your webspace.</p>
+		<h3>Step 10 - Submit your link via BlackBoard</h3>
+		<p>Using BlackBoard, please submit a link to the lab4.html web page on your Algonquin College web space.</p>
+
+		<h3>Marking Scheme</h3>
+		See the <em>Lab 4 Mark Breakdown</em> document for a break down.
+        <p>Note that 30% of your final grade comes from the grades you obtained from your labs and assignments.</p>
+	
+</body></html>

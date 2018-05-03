@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 8 Lab - JavaScript DOM and Arrays By Guanghua He</title>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
+    <script>
+        function validateForm() {
+            //Get the invalid input and Set all the input error to the red color.
+            document.getElementById("sherr", "fnerr", "lnerr", "aderr", "cierr", "prerr", "pcerr").innerHTML = "";
+            document.getElementById("wq1err", "wq2err", "wq3err", "wqerr").innerHTML = "";
+            document.getElementById("sherr").style.color = "red";
+            document.getElementById("fnerr").style.color = "red";
+            document.getElementById("lnerr").style.color = "red";
+            document.getElementById("aderr").style.color = "red";
+            document.getElementById("cierr").style.color = "red";
+            document.getElementById("prerr").style.color = "red";
+            document.getElementById("pcerr").style.color = "red";
+            document.getElementById("wq1err").style.color = "red";
+            document.getElementById("wq2err").style.color = "red";
+            document.getElementById("wq3err").style.color = "red";
+            document.getElementById("wqerr").style.color = "red";
+
+            document.getElementById("shipLabel").style.color = "";
+            var shipSel = false;
+            var x = document.getElementsByName("shippingType");
+
+            //firstName validation
+            var a = document.getElementById("firstName")
+            if (a.value == "") {
+                document.getElementById("fnerr").innerHTML = "Input required";
+                //alert("First Name must be filled out");
+            }
+
+            //lastName validation                
+            var b = document.getElementById("lastName")
+            if (b.value == "") {
+                document.getElementById("lnerr").innerHTML = "Input required";
+
+                //alert("Last Name must be filled out");
+            }
+
+            //address validation
+            var c = document.getElementById("address")
+            if (c.value == "") {
+                document.getElementById("aderr").innerHTML = "Input required";
+                //alert("Address must be filled out");
+            }
+
+            //city validation
+            var d = document.getElementById("city")
+            if (d.value == "") {
+                document.getElementById("cierr").innerHTML = "Input required";
+                // alert("City must be filled out");
+            }
+
+            //province validation
+            var e = document.getElementById("province").value;
+            if (e == "") {
+                document.getElementById("prerr").innerHTML = "Selection required";
+                //alert("Province must be filled out");
+            }
+
+            //postalCode validation
+            var f = document.getElementById("postalCode")
+                //if (f.value == "" || f.value.length !== 6 || isNaN(f.value))
+            if (f.value == "" || f.value.length !== 6)
+
+            {
+                document.getElementById("pcerr").innerHTML = "Postal code must be 6 digits length!";
+                // alert("Postal code must be 6 digits length");
+            }
+
+            //widget1qty validation
+            var w1 = document.getElementById("widget1qty")
+            var total = 0
+            if (isNaN(parseInt(w1.value)) || w1.value < 0) {
+                document.getElementById("wq1err").innerHTML = "Input required";
+                // alert("Quantity of the first widget must be 0 or greater");
+
+            } else
+                total += parseInt(w1.value) * 5
+
+            //widget2qty validation
+            var w2 = document.getElementById("widget2qty")
+            if (isNaN(parseInt(w2.value)) || w2.value < 0) {
+                document.getElementById("wq2err").innerHTML = "Input required";
+                //alert("Quantity of the second widget must be 0 or greater");
+            } else
+                total += parseInt(w2.value) * 15
+
+            //widget3qty validation
+            var w3 = document.getElementById("widget3qty")
+            if (isNaN(parseInt(w3.value)) || w3.value < 0) {
+                document.getElementById("wq3err").innerHTML = "Input required";
+                // alert("Quantity of the third widget must be 0 or greater");
+            } else
+                total += parseInt(w3.value) * 25
+
+            //wqerr validation
+            if (total == 0) {
+                document.getElementById("wqerr").innerHTML = "At least one product must be ordered!";
+                // alert("At least one product must be ordered");
+            }
+
+            /*
+            Check whether a Shipping method has been selected.  Loop through the elements of the radio button group
+            */
+            for (var i = 0; i < x.length; i++) {
+                if (x[i].type == "radio" && x[i].checked) {
+                    shipSel = true; // A "Shipping Type" has been selected!
+                    switch (i) {
+                        case 0:
+                            total += 5
+                            break;
+                        case 1:
+                            total += 10
+                            break;
+                        default:
+                            total += 20
+
+                    }
+                }
+            }
+
+            if (!shipSel) {
+
+                //document.getElementById("shipLabel").style.color = "red";
+                document.getElementById("sherr").innerHTML = "Shipping method must be selected!";
+                return false;
+
+            }
+
+            if (document.getElementById("fnerr").innerHTML != "" || document.getElementById("lnerr").innerHTML != "" || document.getElementById("aderr").innerHTML != "" || document.getElementById("cierr").innerHTML != "" || document.getElementById("prerr").innerHTML != "" || document.getElementById("wq1err").innerHTML != "" || document.getElementById("wq2err").innerHTML != "" || document.getElementById("wq3err").innerHTML != "" || document.getElementById("wqerr").innerHTML != "") {
+                return false;
+            }
+
+            alert("Order Form successfully validated. The total price is : " + total)
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h2 class="center">Order Form</h2>
+        <div id="content">
+            <form name="orderForm" method="get" action="processForm.html" onsubmit="return validateForm();">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <table>
+
+                        <tr>
+                            <td>First Name:</td>
+                            <td>
+                                <input type="text" name="firstName" id="firstName" size="30">
+                            </td>
+                            <td> <span id="fnerr"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td>
+                                <input type="text" name="lastName" id="lastName" size="30">
+                            </td>
+                            <td> <span id="lnerr"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Address:</td>
+                            <td>
+                                <input type="text" name="address" id="address" size="30">
+                            </td>
+                            <td> <span id="aderr"></span></td>
+                        </tr>
+                        <tr>
+                            <td>City:</td>
+                            <td>
+                                <input type="text" name="city" id="city" size="30">
+                            </td>
+                            <td> <span id="cierr"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Province:</td>
+                            <td>
+                                <select name="province" id="province" size="1">
+                                    <option value="">Select a province</option>
+                                    <option value="BC">British Columbia</option>
+                                    <option value="AB">Alberta</option>
+                                    <option value="SK">Saskatchewan</option>
+                                    <option value="MB">Manitoba</option>
+                                    <option value="ON">Ontario</option>
+                                    <option value="QC">Québec</option>
+                                    <option value="NB">New Brunswick</option>
+                                    <option value="NS">Nova Scotia</option>
+                                    <option value="PE">Prince Edward Island</option>
+                                    <option value="NF">Newfoundland</option>
+                                    <option value="YK">Yukon</option>
+                                    <option value="NWT">Northwest Territories</option>
+                                    <option value="NU">Nunavut</option>
+                                </select>
+                            </td>
+                            <td> <span id="prerr"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Postal Code:</td>
+                            <td>
+                                <input type="text" name="postalCode" id="postalCode" maxlength="6">
+                            </td>
+                            <td> <span id="pcerr"></span></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>Order Information</legend>
+                    <table>
+
+                        <tr>
+                            <td rowspan="3">Select your products:
+                                <br>
+                                <span id="productError" class="errorMessage" hidden></span></td>
+                            <td>Widget #1&nbsp;
+                                <input type="text" name="widget1qty" id="widget1qty" size="1" value="0">Qty @ <strong>$5.00/ea</strong></td>
+                            <td> <span id="wq1err"></span></td>
+                            <td rowspan="3"> <span id="wqerr"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Widget #2&nbsp;
+                                <input type="text" name="widget2qty" id="widget2qty" size="1" value="0">Qty @ <strong>$15.00/ea</strong> </td>
+                            <td> <span id="wq2err"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Widget #3&nbsp;
+                                <input type="text" name="widget3qty" id="widget3qty" size="1" value="0">Qty @ <strong>$25.00/ea</strong>
+                            </td>
+                            <td> <span id="wq3err"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="3"><span id="shipLabel">Shipping Type:</span></td>
+                            <td>Standard ($5.00)
+                                <input type="radio" name="shippingType" id="shippingTypeStandard" value="Standard">
+                            </td>
+                            <td rowspan="3">&nbsp;</td>
+                            <td rowspan="3"><span id="sherr"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Express ($10.00)
+                                <input type="radio" name="shippingType" id="shippingTypeExpress" value="Express">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Overnight ($20.00)
+                                <input type="radio" name="shippingType" id="shippingTypeOvernight" value="Overnight">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>Submit Order</legend>
+                    <table>
+
+                        <tr>
+                            <td>
+                                <input type="submit" name="btnSubmit" id="btnSubmit" value="Submit Order">
+                            </td>
+                            <td>
+                                <input type="reset" name="btnReset" id="btnReset" value="Reset Form">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+        <!-- End Content -->
+        <footer>
+            <p>&copy;2018 CST8285. All rights reserved.</p>
+        </footer>
+    </div>
+    <!-- End Wrapper -->
+    <p>
+        <a href="http://validator.w3.org/check?uri=referer"
+           onclick="this.href='http://validator.w3.org/check?uri=' + 
+      document.URL"><img
+            src="http://www.w3.org/Icons/valid-xhtml10"
+            alt="Valid XHTML 1.0!" height="31" width="88" /></a>
+      </p>
+
+<p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer"
+           onclick="this.href='http://jigsaw.w3.org/css-validator/check?uri=' + 
+      document.URL">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+       
+</body>
+
+</html>

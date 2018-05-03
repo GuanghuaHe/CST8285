@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Lab 4 by Guanghua He</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+   </head>
+   <body>
+      <div id="wrapper">
+         <header>
+            <h1>Registration</h1>
+            <p>Please enter the following information. Fields marked with an asterisk (<span class="required">*</span>) are required.</p>
+         </header>
+         <div id="content">
+            <fieldset>
+               <legend>Personal Information</legend>
+               <table>
+                  <tr>
+                     <td>
+                        <p><span class="required">*</span>Last Name: </p>
+                     </td>
+                     <td>
+                        <p><input type="text" name="lname" /></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><span class="required">*</span>First Name:</p>
+                     </td>
+                     <td>
+                        <p><input type="text" name="lname" /></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><span class="required">*</span>Postal Code:</p>
+                     </td>
+                     <td>
+                        <p> <input type="text" name="posttalcode" /></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><span class="required">*</span>Address:</p>
+                     </td>
+                     <td>
+                        <p> <input type="text" name="lname" size="40" /></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><span class="required">*</span>City:</p>
+                     </td>
+                     <td>
+                        <p> <input type="text" name="city"  /></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><span class="required">*</span>Province:</p>
+                     </td>
+                     <td>
+                        <p>
+                           <select>
+                              <option value="BC">Select a province</option>
+                              <option value="BC">British Columbia</option>
+                              <option value="AB">Alberta</option>
+                              <option value="SK">Saskatchewan</option>
+                              <option value="MB">Manitoba</option>
+                              <option value="ON">Ontario</option>
+                              <option value="QC">Quebec</option>
+                              <option value="NB">New Brunswick</option>
+                              <option value="NS">Nova Scotia</option>
+                              <option value="PE">Prince Edward Island</option>
+                              <option value="NF">Newfoundland</option>
+                              <option value="YK">Yukon</option>
+                              <option value="NWT">Northwest Territories</option>
+                              <option value="NU">Nunavut</option>
+                           </select>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><span class="required">*</span>Email address:</p>
+                     </td>
+                     <td>
+                        <p><input type="text" name="email"  /></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><span class="required">*</span>Home phone:</p>
+                     </td>
+                     <td>
+                        <p><input type="text" name="hphone" /></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p>Work phone:</p>
+                     </td>
+                     <td>
+                        <p><input type="text" name="wphone"  /></p>
+                     </td>
+                  </tr>
+               </table>
+               <!-- * First Name | textbox -->
+               <!-- * Last Name | textbox -->
+               <!-- * Address | textbox, with a size of 40 characters -->
+               <!-- * City | textbox -->
+               <!-- * Province | dropdown box, has options for all provinces and territories. 
+                  Option values should be the short code for the province. A list is provided below. 
+                  
+                  BC - British Columbia
+                  AB - Alberta
+                  SK - Saskatchewan
+                  MB - Manitoba
+                  ON - Ontario
+                  QC - Quebec
+                  NB - New Brunswick
+                  NS - Nova Scotia
+                  PE - Prince Edward Island
+                  NF - Newfoundland
+                  YK - Yukon
+                  NWT- Northwest Territories
+                  NU - Nunavut
+                  
+                  -->
+               <!-- * Postal Code | textbox, maximum length of 6 characters -->
+               <!-- * Email address | textbox -->
+               <!-- * Home phone | textbox -->
+               <!-- Work phone | textbox -->
+            </fieldset>
+            <fieldset>
+               <legend>Payment Information</legend>
+               <table>
+                  <tr>
+                     <td>
+                        <p>Credit Card Type:</p>
+                     </td>
+                     <td>
+                        <p>
+                           <label ><img src="images/visa.png"  alt="visa" /></label>
+                           <input type="radio" id="creditCardVisa" name="creditCard" >
+                           <label ><img src="images/mastercard.png"  alt="mastercard" /></label>
+                           <input type="radio" id="creditCardMasterCard" name="creditCard" >
+                           <label ><img src="images/amex.png"  alt="amex" /></label>
+                           <input type="radio" id="creditCardAmex" name="creditCard" >
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p>Credit Card Number:</p>
+                     </td>
+                     <td>
+                        <p>
+                           <input type="text" name="cardno" />
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p>Expiry(MM/YY)</p>
+                     </td>
+                     <td>
+                        <p>
+                           <input type="text" name="edate" maxlength="2" size="2" /> / <input type="text" name="edate" maxlength="2" size="2" />
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+               <!-- Credit Card Type | radio buttons
+                  There should be three buttons: one for VISA, one for MasterCard, and one for American Express.
+                  All three buttons can go in one <td> element.
+                  
+                  NOTE: each radio button should have the same name, but a different id. For example, you might use
+                  the name "creditCard" for each, but "creditCardVisa", "creditCardAmex" and "creditCardMasterCard"
+                  as the id's. 
+                  
+                  Also, please review the lab instructions regarding the placement of credit card icon images beside
+                  each radio button. 
+                  -->
+               <!-- Credit Card Number | textbox -->
+               <!-- Expiry Date | textbox, maximum 5 characters (MM/YY) -->
+            </fieldset>
+            <fieldset>
+               <legend>Agree and Submit</legend>
+               <table>
+                  <tr>
+                     <td>
+                        <p>Check if you agree with <a href="http://www.algonquincollege.com">Terms and Conditions</a><span class="required">*</span></p>
+                     </td>
+                     <td>
+                        <p>
+                           <input type="checkbox" name="agree" value="yes" />
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><input type="submit" value="Submit Registration" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset Form" /></p>
+                     </td>
+                     <td>&nbsp;</td>
+                  </tr>
+               </table>
+               <!-- * Agree to Terms and Conditions? | checkbox, value of 'yes' -->
+               <!-- No field name. Place a submit button in one column, and reset button in the other. -->
+            </fieldset>
+         </div>
+         <!-- End Content -->
+         <footer>
+            <p>&copy;2013 CST8285. All rights reserved.</p>
+         </footer>
+      </div>
+      <!-- End Wrapper -->
+   </body>
+</html>

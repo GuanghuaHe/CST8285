@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Lab5 By Guanghua He</title>
+      <meta charset="utf-8">
+      <script> 
+         function convertToF(){ 
+         var degCent = prompt("Enter a temperature as Celsius", 0);
+         if (isNaN(parseFloat(degCent))){
+               do
+               {
+         degCent = prompt("You did not enter a temperature as Celsius. Please enter a temperature as Celsius.");
+               }while (isNaN(parseFloat(degCent)));
+               }
+         var degFahren = 9 / 5 * degCent + 32;
+         alert("The " + degCent + " degrees Celsius is "  + degFahren + " degrees Fahrenheit.");
+         }       
+      </script>
+   </head>
+   <body>
+      <h3>Lab 5 - Introduction to JavaScript</h3>
+      <table>
+         <tr>
+            <th>Temperature conversion</th>
+         </tr>
+         <tr>
+            <td>
+              <input type="button" name="btnCovert" id="btnCovert" value="Covert!" onclick="convertToF();">
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>
